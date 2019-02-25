@@ -616,7 +616,7 @@ func (s *Store) ACLTokenMinExpirationTime(local bool) (time.Time, error) {
 	return token.ExpirationTime, nil
 }
 
-// ACLTokenListExpires lists tokens that are expires as of the provided time.
+// ACLTokenListExpires lists tokens that are expired as of the provided time.
 // The returned set will be no larger than the max value provided.
 func (s *Store) ACLTokenListExpired(local bool, asOf time.Time, max int) (structs.ACLTokens, <-chan struct{}, error) {
 	tx := s.db.Txn(false)
